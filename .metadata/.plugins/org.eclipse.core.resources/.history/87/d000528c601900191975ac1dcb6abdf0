@@ -1,0 +1,10 @@
+package Section1;
+
+public class Cose02 {
+// 데이터 파일로부터 사람들의 이름과 전화번호를 입력받아 배열 members에 저장한 후, 입력된 순서대로 출력하려고 한다.
+// 이 코드에서 잘못된 점들을 모두 찾아서 수정하라
+	public static void main(String[] args) {
+		
+	}
+
+}

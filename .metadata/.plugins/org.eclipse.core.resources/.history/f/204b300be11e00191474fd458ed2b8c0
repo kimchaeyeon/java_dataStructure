@@ -1,0 +1,13 @@
+package section2;
+
+public class DeadlinedEvent {
+	public String title;
+	public MyDate deadline;
+	
+	public DeadlinedEvent ( String title, MyDate date) //持失切 持失
+	{
+		this.title = title;
+		this.deadline = date;
+	}
+
+}

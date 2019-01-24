@@ -1,0 +1,76 @@
+<html>
+<head>
+<meta name=viewport content="width=device-width, initial-scale=1, user-scalable=0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="css/core.css">
+<link rel="stylesheet" href="css/core2.css" media="only screen and (min-width:800px)">
+<title>My Social Network</title>
+<style>
+.form-mtxt {
+	float: left;
+	width: 100%;
+	padding: 10px 15px;
+	line-height: 1.5em;
+	background-color: white;
+	font-size: 1.1em;
+	border: 1px solid #ddd;
+	border-radius: 10px;
+	outline: none;
+}
+.form-txbn {
+	float: left;
+	width: 100%;
+}
+.form-txbn .text {
+	float: left;
+	line-height: 32px;
+}
+.form-txbn .button {
+	float: right;
+	padding: 5px 20px;
+	font-size: 0.9em;
+	background-color: white;
+	text-align: center;
+	color: #24C;
+	border: 1px solid #24C;
+	border-radius: 8px;
+	cursor: pointer;
+}
+.image-pane {
+	float: left;
+	width: 100%;
+	height: 150px;
+	background-color: white;
+	box-sizing: border-box;
+	border: 1px solid #ddd;
+	border-radius: 10px;
+}
+</style>
+</head>
+<body>
+	<div class="page-hdr"> 글쓰기
+		<div class="back" onclick="history.back()"></div>
+	</div>
+	<div class="section bg-eee phor-24">
+		<textarea class="form-mtxt mtop-20 mbot-20" rows=5 placeholder="나누고자 하는 이야기를 올려보세요."></textarea>
+		<div class="form-txbn">
+			<div class="text">이미지 리스트</div>
+			<div class="button">사진추가</div>
+		</div>
+		<div class="image-pane mtop-10 mbot-20"></div>
+		
+		<div class="section mbot-30">
+			<div class="form-submit" onclick="upload()">작성글을 업로드합니다.</div>
+		</div>
+	</div>
+	<div class="page-footer">MYSNS COMPANY 2017</div>
+</body>
+</html>
+
+<script src="js/jquery-1.12.0.min.js"></script>
+<script src="js/core.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+
+});
+</script>

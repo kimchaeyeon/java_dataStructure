@@ -1,0 +1,27 @@
+package section1;
+
+public class Notebook extends Computer{ //컴퓨터클래스의 모든 부분을 상속받는다
+	
+	public double screenSize;
+	public double weight;
+	
+	public Notebook( String man, String proc, int ram, int disk, double speed, double screen, double weight){ //생성자 클래스의 맴버를 매개변수로 받아서 초기화하기
+		super( man, proc, ram, disk, speed);
+		screenSize = screen;
+		this.weight = weight;
+	}
+	
+	public static void main(String [] args){
+		Notebook test = new Notebook("Dell", "i5", 4, 1000, 3.2, 15.6, 1.2);
+/*		test.manufacturer = "Dell";
+		test.processor = "i5";
+		test.ramSize = 4;
+		test.diskSize =1000;
+		test.processorSpeed = 3.2;
+		
+		test.screenSize = 15.6;
+		test.weight = 1.2;*/
+		
+		System.out.println( test.computePower() );
+	}
+}

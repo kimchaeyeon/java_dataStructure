@@ -1,0 +1,20 @@
+package section2;
+
+import java.util.Scanner;
+
+public class Scheduler {
+
+	public void processCommand()
+	{
+		Scanner kb = new Scanner( System.in );
+		while(true){
+			System.out.print("$ );
+			kb.close();
+		}
+	}
+	
+	public static void main(String[] args) {
+		
+	}
+
+}

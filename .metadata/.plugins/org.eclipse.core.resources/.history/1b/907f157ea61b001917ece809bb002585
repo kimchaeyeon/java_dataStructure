@@ -1,0 +1,11 @@
+package Section1;
+
+public class Code05 {
+	
+	
+    // 데이터 파일로부터 입력을 받는다.
+	public static void main(String[] args) {
+		
+	}
+
+}

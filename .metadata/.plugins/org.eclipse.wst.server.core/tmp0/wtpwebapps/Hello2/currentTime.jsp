@@ -1,0 +1,19 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+    <%@ page import="java.util.Date" %>
+<%!
+    void function(){
+        System.out.println("---------------------");
+        }
+        %>
+
+<html>
+<h1>현재 날짜 출력 실습</h1>
+
+<% 
+   Date d = new Date();
+%>
+
+ 현재 날짜: <%= d %>
+ 
+</html>

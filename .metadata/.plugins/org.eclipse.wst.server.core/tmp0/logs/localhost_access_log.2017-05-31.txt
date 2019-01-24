@@ -1,0 +1,7 @@
+127.0.0.1 - - [31/May/2017:13:23:18 +0900] "GET / HTTP/1.1" 404 994
+0:0:0:0:0:0:0:1 - - [31/May/2017:13:23:19 +0900] "GET /anywhrerego/index.html HTTP/1.1" 200 53404
+0:0:0:0:0:0:0:1 - - [31/May/2017:13:23:19 +0900] "GET /anywhrerego/mobile.css HTTP/1.1" 404 1038
+0:0:0:0:0:0:0:1 - - [31/May/2017:13:23:19 +0900] "GET /anywhrerego/style.css HTTP/1.1" 404 1036
+0:0:0:0:0:0:0:1 - - [31/May/2017:13:23:19 +0900] "GET /anywhrerego/home.png HTTP/1.1" 404 1034
+0:0:0:0:0:0:0:1 - - [31/May/2017:13:23:19 +0900] "GET /anywhrerego/logo.png HTTP/1.1" 404 1034
+0:0:0:0:0:0:0:1 - - [31/May/2017:13:23:19 +0900] "GET /anywhrerego/map1.png HTTP/1.1" 404 1034

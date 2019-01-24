@@ -1,0 +1,6 @@
+package section2;
+// 수직선이나 수평선을 만들기 위한 클래스
+public class OrthoLine {
+	public MyPoint2 u;
+	public MyPoint2 v;
+}

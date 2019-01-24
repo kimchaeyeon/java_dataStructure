@@ -1,0 +1,12 @@
+package Section1;
+
+public class Code05 {
+    // 데이터 파일로부터 입력을 받는다.
+	static MyRectangle1 [] rects;
+	static int n = 0;
+	
+	public static void main(String[] args) {
+		
+	}
+
+}

@@ -1,0 +1,121 @@
+body {
+	margin: 0;
+}
+
+.mtop-10 {margin-top: 10px;}
+.mtop-20 {margin-top: 20px;}
+.mtop-30 {margin-top: 30px;}
+
+.mbot-10 {margin-bottom: 10px;}
+.mbot-20 {margin-bottom: 20px;}
+.mbot-30 {margin-bottom: 30px;}
+
+.bg-eee{ background-color: #eee;}
+
+.section{
+    float: left;
+    width: 100%;
+    
+    
+    }
+.section.phor-24{
+    
+    padding: 0 24px;
+    box-sizing: border-box;
+    
+    /* width: calc(100%- 48px); 박스사이징이랑 같은거지만 호환성문제때문에 박스사이징씀*/
+}
+.page-hdr{
+	position: relative;
+	float: left;
+	width: 100%;
+	padding: 15px;
+	font-size: 1.1em;
+	font-weight: bold; 
+	text-align: center;
+	border-bottom: 1px solid #ddd;
+	box-sizing: border-box;
+}
+.page-hdr .navicon {
+	position: absolute;
+	left: 10px; top: 16px;
+	width: 24px; height: 24px;
+	background-image: url("../images/navicon.png");
+	background-size: 24px 24px;
+	background-position: 50%;
+	background-repeat:no-repeat;
+	cursor: pointer;
+}
+.page-mnu {
+	position: fixed;
+	overflow: hidden;
+	left: -240px; top: 0px;
+	width: 240px; height: 100%;
+	background-color: #ddd;
+	border-right: 1px solid white;
+	transition: all 0.5s ease-out;
+}
+.page-mnu .menu {
+	padding: 15px 20px;
+	background-color: #eee;
+	font-size: 1.1em;
+	border-bottom: 1px solid #ddd;
+	cursor:pointer;
+}
+
+.page-footer{
+    position: absolute; /*이 div의 패런트 태그는 바디이다. 바디에 디폴트로 포지션 렐러티브가있어서 적용이됨*/
+    width: 100%;
+    bottom: 20px;
+    font-size: 0.9em;
+    color: #999;
+    text-align: center;
+    }
+.form-text{
+   float: left;
+   width: 100%;
+   padding: 0 15px;
+   line-height: 44px;
+   background-color: white;
+   font-size: 1.1em;
+   border: 1px solid #ddd;
+   border-radius: 20px;
+   outline: none;
+   }
+.form-text:focus{
+   border: 1px solid #24C;
+ } 
+.form-submit{
+   float: left;
+   width:  80%;
+   margin: 10px 10%;
+   padding: 10px 0;
+   text-align: center;
+   background-color: #24C;
+   color: white;
+   border-radius: 8px;
+   cursor: pointer;
+ }
+ .form-submit.mtop-30{/*클래스 공백이있으면 안됨*/
+   margin-top: 30px;
+ }
+ .form-btn{
+     float: left;
+     padding: 8px 25px;
+     color: #24C;
+     border: 1px solid #25C;
+     border-radius: 8px;
+     cursor: pointer;
+     }
+
+.page-hdr{
+	float: left;
+	width: 100%;
+	padding: 15px;
+	box-sizing: border-box;
+	font-size: 1.1em;
+	font-weight: bold; 
+	text-align: center;
+	border-bottom: 1px solid #ddd;
+	
+}

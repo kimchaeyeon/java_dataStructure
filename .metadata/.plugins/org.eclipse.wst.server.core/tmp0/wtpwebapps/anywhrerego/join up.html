@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8"> 
+  <title>회원 가입</title>
+ </head>
+ <body>
+ <div id="menu-area">
+     <ul>
+       <div id="x">
+         <li><a href="join up.html">join up</a></li>
+         <li><a href="log in.html">log in</a></li>
+       </div> 
+         <li><a href="index.html"><img src="images/home.png"/></a></li>
+      </ul>
+   </div>
+<div id="logo-area">
+      <a href="index.html"><img src="images/logo.png"/></a> 
+</div>
+<div class="joinupForm">
+ <form name="write_form_member" method="post">
+   <table>
+      <tr>
+         <th> 이름</th>
+         <td><input type="text" name="mbname"></td>
+      </tr>
+       <tr>
+         <th>아이디</th>
+         <td>
+         <input type="text" name="cursor:pointer">
+         <a href='#' style='cursor:help'> </a>
+         </td>
+       </tr>
+       <tr>
+         <th>비밀번호</th>
+         <td><input type="password" name="mbpw"> 영문/숫자포함 6자 이상</td>
+       </tr>
+       <tr>
+         <th>비밀번호 확인</th>
+         <td><input type="password" name="mbpw_re"></td>
+       </tr>
+        <tr>
+          <th>이메일</th>
+          <td>
+            <input type='text' name="email">&nbsp;@
+            <input type='text' name="email_dns">
+              <select name="emailaddr">
+                 <option value="">직접입력</option>
+                 <option value="daum.net">daum.net</option>
+                 <option value="empal.com">empal.com</option>
+                 <option value="gmail.com">gmail.com</option>
+                 <option value="hanmail.net">hanmail.net</option>
+                 <option value="msn.com">msn.com</option>
+                 <option value="naver.com">naver.com</option>
+                 <option value="nate.com">nate.com</option>
+              </select>
+            </td>
+         </tr>
+         
+        <tr>
+          <th>핸드폰 번호</th>
+           <td><input type="text"name="tel_h1"> -
+               <input type="text" name="tel_h2_1"> -
+               <input type="text" name="tel_h2_2">
+           </td>
+          </tr>
+        </table>
+    </form>
+    <div class = "joinup">
+    <a href="log in.html" >회원가입</a>
+    </div>
+    </div>
+</body>
+<style>
+   #menu-area {
+      float: left;
+      width: 100%;
+   }
+   #menu-area ul {
+      width: 100%;
+      margin: 0 auto;
+      padding: 0;
+   }
+
+   #menu-area li {
+      float: right;
+      list-style: none;
+   }
+   #x a {
+      display: inline-block;
+      padding: 5px 15px;
+      text-decoration: none;
+      color: black;
+      margin: 10 auto;
+   }
+   #x li:hover {
+      background-color: rgb(189,189,189);
+   }
+   #menu-area img{
+      width: 50px;
+      height: 40px;
+      position: relative;
+      display: inline-block;
+      padding: 5px 10px;
+      text-decoration: none;
+      color: black;
+      margin: 3 auto;
+   }  
+
+  #logo-area {
+      margin: 10px auto;
+      text-align: center;
+   }
+
+ #logo-area img{
+   display: inline-block;
+   width:400px; 
+   height:120px; 
+   padding: 0;
+   text-align:center; 
+   margin: 30px auto;
+   position: relative;
+}
+form{
+   margin: 50px auto;
+}
+table {
+        margin-left: auto;
+        margin-right: auto;
+        width: 650px;
+        padding: 5px 0 5px 0;
+      }
+  .joinup{
+      margin: 0px auto;
+          text-align: center;
+}
+.joinupForm a{
+  color: black;
+  
+}
+</style>
+</html>

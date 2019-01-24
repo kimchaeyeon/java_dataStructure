@@ -1,0 +1,10 @@
+CREATE DATABASE IF NOT EXISTS anywherego
+DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE anywherego;
+
+CREATE TABLE IF NOT EXISTS user (
+    id BIGINT(16) PRIMARY KEY   COMMENT 'mobile number',
+    password VARCHAR(32),
+    name VARCHAR(32),
+    ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    );

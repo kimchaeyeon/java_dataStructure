@@ -1,0 +1,39 @@
+package section2;
+
+import java.util.Scanner;
+
+public class Scheduler {
+// 사용자가 입력한 이벤트들이 다 다른 타입이다. 어떻게 저장해야할지 생각해보는 것이 중요한 프로그램!
+// 배열은 같은 타입만 저장할 수 있다. 
+// 간단하게 생각해보면 이벤트 3개에 따른 3개의 배열을 만들고, 3개의 변수를 만들어서 저장할 수 있다.
+// 클래스들의 상속관계를(다향성)을 잘 이용하여 간단하게 잘 표현해보기
+
+	
+	
+	public void processCommand()
+	{
+		Scanner kb = new Scanner( System.in );
+		while(true){
+			System.out.print("$ ");
+			String command = kb.next();
+			if ( command.equals("addevent")){ // 사용한 이벤트(불러온)어디에 저장할 것 인가.
+				
+			}
+			else if( command.equals("list")){
+				
+			}
+			else if( command.equals("show")){
+				
+			}
+			else if( command.equals("exit"))
+				break;
+		}
+		kb.close();
+	}
+	
+	public static void main(String[] args) {
+		Scheduler app = new Scheduler();// 메인함수를 포함하고 있는 클래스의 객체를 생성하고 ,
+		app.processCommand();
+	}
+
+}

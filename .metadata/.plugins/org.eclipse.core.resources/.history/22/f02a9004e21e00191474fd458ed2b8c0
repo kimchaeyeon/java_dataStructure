@@ -1,0 +1,33 @@
+package section2;
+
+import java.util.Scanner;
+
+public class Scheduler {
+
+	public void processCommand()
+	{
+		Scanner kb = new Scanner( System.in );
+		while(true){
+			System.out.print("$ ");
+			String command = kb.next();
+			if ( command.equals("addevent")){
+				
+			}
+			else if( command.equals("list")){
+				
+			}
+			else if( command.equals("show")){
+				
+			}
+			else if( command.equals("exit")){
+				break;
+			}
+		}
+		kb.close();
+	}
+	
+	public static void main(String[] args) {
+		
+	}
+
+}

@@ -1,0 +1,403 @@
+body {
+      margin: 0;
+      font-family: 'Malgun Gothic', 'Arial';
+   }
+   #menu-area {
+      float: left;
+      width: 100%;
+   }
+
+   #menu-area ul {
+      width: 100%;
+      margin: 0 0 0 530px;
+      padding: 0;
+   }
+
+   #menu-area li {
+      float: right;
+      list-style: none;
+   }
+   #y a {
+      padding: 5px 15px;
+      text-decoration: none;
+      color: black;
+      margin: 10 auto;
+   }
+   #y li:hover {
+      background-color: rgb(189,189,189);
+   }
+   #menu-area img{
+      width: 50px;
+      height: 40px;
+      position: relative;
+      display: inline-block;
+      padding: 5px 10px;
+      text-decoration: none;
+      color: black;
+      margin: 3 auto;
+   }  
+  #logo-area {
+      margin: 10px 100px 10px 190px;
+      text-align: center;
+   }
+
+ #logo-area img{
+   width:400px; 
+   height:120px; 
+   padding: 0;
+   text-align:center; 
+   margin: 20px 0 20px 80px; 
+   position: relative;
+}
+   #contents-area {
+      float: auto;
+      width: 800px;
+       margin: 40 auto;
+       padding: 10px 0;
+      text-align: center;
+   } 
+   
+   #search{
+      float: auto;
+      width: 100%;
+       margin: 10px 10px 10px 45px;
+       padding: 10px 0;
+      text-align: center;
+   }
+
+   #contents-area img {
+      float: center;
+      height: 1000px;
+      width: 800px;
+      margin: 0 80px;
+      text-align: center;
+  }
+
+.image-text{
+   position: relative;
+   float: left;
+   margin: 0 auto;
+}
+
+.image-text img
+{
+width: 100%;
+height: 100%;
+}
+
+ .image-text a 
+ {
+   display: inline-block;
+   text-decoration: none;
+}
+
+.incheon{
+   overflow: hidden;
+   position: absolute;
+   top: 240px;
+   font-weight: bold;
+   font-size: 15px;
+   left: 217px;
+   width: 60px;
+   bottom: 0px;
+   height: 30px;   
+}
+
+.gangwondo{
+   top: 200px;
+   font-weight: bold;
+   left: 475px;
+   width: 120px;
+   position: absolute;
+   overflow: hidden;
+   bottom: 0px;
+   height: 40px;
+   font-size: 30px;
+}
+ .chungcheongnamdo{
+   top: 400px;
+   font-weight: bold;
+   left: 240px;
+   width: 120px;
+   position: absolute;
+   overflow: hidden;
+   bottom: 0px;
+   height: 40px;
+   font-size: 25px;
+}
+.chungcheongbukdo{
+   top: 357px;
+   font-weight: bold;
+   left: 400px;
+   width: 120px;
+   position: absolute;
+   overflow: hidden;
+   bottom: 0px;
+   height: 40px;
+   font-size: 25px;
+}
+.seoul{
+   top: 245px;
+   font-weight: bold;
+   left: 313px;
+   width: 60px;
+   position: absolute;
+   overflow: hidden;
+   bottom: 0px;
+   height: 30px;
+   font-size: 15px;
+}
+.gyeonggido{
+   top: 285px;
+   font-weight: bold;
+   left: 325px;
+   width: 100px;
+   position: absolute;
+   overflow: hidden;
+   bottom: 0px;
+   height: 30px;
+   font-size: 25px;
+   }
+.jeollanamdo{
+   top: 680px;
+   font-weight: bold;
+   left: 240px;
+   width: 120px;
+   position: absolute;
+   overflow: hidden;
+   bottom: 0px;
+   height: 50px;
+   font-size: 30px;
+}
+ .jeollabukdo{
+   top: 535px;
+   font-weight: bold;
+   left: 290px;
+   width: 120px;
+   position: absolute;
+   overflow: hidden;
+   bottom: 0px;
+   height: 30px;
+   font-size: 25px;
+}
+ .jejudo{
+   top: 855px;
+   font-weight: bold;
+   left: 215px;
+   width: 100px;
+   position: absolute;
+   overflow: hidden;
+   bottom: 0px;
+   height: 30px;
+   font-size: 20px;
+}
+.gyeongsangnamdo{
+   top: 610px;
+   font-weight: bold;
+   left: 480px;
+   width: 120px;
+   position: absolute;
+   overflow: hidden;
+   bottom: 0px;
+   height: 50px;
+   font-size: 25px;
+}
+ .gyeongsangbukdo{
+   top: 420px;
+   font-weight: bold;
+   left: 550px;
+   width: 120px;
+   position: absolute;
+   overflow: hidden;
+   bottom: 0px;
+   height: 50px;
+   font-size: 30px;
+}
+.daejeon{
+   top: 445px;
+   font-weight: bold;
+   left: 373px;
+   width: 60px;
+   position: absolute;
+   overflow: hidden;
+   bottom: 0px;
+   height: 30px;
+   font-size: 14px;
+}
+.busan{
+   top: 630px;
+   font-weight: bold;
+   left: 643px;
+   width: 60px;
+   position: absolute;
+   overflow: hidden;
+   bottom: 0px;
+   height: 30px;
+   font-size: 17px;
+}
+.ulsan{
+   top: 575px;
+   font-weight: bold;
+   left: 678px;
+   width: 60px;
+   position: absolute;
+   overflow: hidden;
+   bottom: 0px;
+   height: 30px;
+   font-size: 17px;
+}
+.daegoo{
+   top: 520px;
+   font-weight: bold;
+   left: 570px;
+   width: 60px;
+   position: absolute;
+   overflow: hidden;
+   bottom: 0px;
+   height: 30px;
+   font-size: 18px;
+}
+.ulleung{
+   top: 283px;
+   font-weight: bold;
+   left: 777px;
+   width: 60px;
+   position: absolute;
+   overflow: hidden;
+   bottom: 0px;
+   height: 30px;
+   font-size: 14px;
+}
+.dokdo{
+   top: 299px;
+   font-weight: bold;
+   left: 800px;
+   width: 60px;
+   position: absolute;
+   overflow: hidden;
+   bottom: 0px;
+   height: 30px;
+   font-size: 13px;
+}
+
+body {
+	margin: 0;
+}
+
+.mtop-10 {margin-top: 10px;}
+.mtop-20 {margin-top: 20px;}
+.mtop-30 {margin-top: 30px;}
+
+.mbot-10 {margin-bottom: 10px;}
+.mbot-20 {margin-bottom: 20px;}
+.mbot-30 {margin-bottom: 30px;}
+
+.bg-eee{ background-color: #eee;}
+
+.section{
+    float: left;
+    width: 100%;
+    
+    
+    }
+.section.phor-24{
+    
+    padding: 0 24px;
+    box-sizing: border-box;
+    
+    /* width: calc(100%- 48px); 박스사이징이랑 같은거지만 호환성문제때문에 박스사이징씀*/
+}
+.page-hdr{
+	position: relative;
+	float: left;
+	width: 100%;
+	padding: 15px;
+	font-size: 1.1em;
+	font-weight: bold; 
+	text-align: center;
+	border-bottom: 1px solid #ddd;
+	box-sizing: border-box;
+}
+.page-hdr .navicon {
+	position: absolute;
+	left: 10px; top: 16px;
+	width: 24px; height: 24px;
+	background-image: url("../images/navicon.png");
+	background-size: 24px 24px;
+	background-position: 50%;
+	background-repeat:no-repeat;
+	cursor: pointer;
+}
+.page-mnu {
+	position: fixed;
+	overflow: hidden;
+	left: -240px; top: 0px;
+	width: 240px; height: 100%;
+	background-color: #ddd;
+	border-right: 1px solid white;
+	transition: all 0.5s ease-out;
+}
+.page-mnu .menu {
+	padding: 15px 20px;
+	background-color: #eee;
+	font-size: 1.1em;
+	border-bottom: 1px solid #ddd;
+	cursor:pointer;
+}
+
+.page-footer{
+    position: absolute; /*이 div의 패런트 태그는 바디이다. 바디에 디폴트로 포지션 렐러티브가있어서 적용이됨*/
+    width: 100%;
+    bottom: 20px;
+    font-size: 0.9em;
+    color: #999;
+    text-align: center;
+    }
+.form-text{
+   float: left;
+   width: 100%;
+   padding: 0 15px;
+   line-height: 44px;
+   background-color: white;
+   font-size: 1.1em;
+   border: 1px solid #ddd;
+   border-radius: 20px;
+   outline: none;
+   }
+.form-text:focus{
+   border: 1px solid #24C;
+ } 
+.form-submit{
+   float: left;
+   width:  80%;
+   margin: 10px 10%;
+   padding: 10px 0;
+   text-align: center;
+   background-color: #24C;
+   color: white;
+   border-radius: 8px;
+   cursor: pointer;
+ }
+ .form-submit.mtop-30{/*클래스 공백이있으면 안됨*/
+   margin-top: 30px;
+ }
+ .form-btn{
+     float: left;
+     padding: 8px 25px;
+     color: #24C;
+     border: 1px solid #25C;
+     border-radius: 8px;
+     cursor: pointer;
+     }
+
+.page-hdr{
+	float: left;
+	width: 100%;
+	padding: 15px;
+	box-sizing: border-box;
+	font-size: 1.1em;
+	font-weight: bold; 
+	text-align: center;
+	border-bottom: 1px solid #ddd;
+	
+}

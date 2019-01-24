@@ -1,0 +1,6 @@
+package section2;
+
+public class OneDayEvent {
+	public String title;
+	public MyDate date;
+}

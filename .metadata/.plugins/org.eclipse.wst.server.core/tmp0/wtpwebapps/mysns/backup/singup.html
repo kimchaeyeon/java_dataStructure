@@ -1,0 +1,132 @@
+<html>
+<head>
+<meta name=viewport content="width=device-width, initial-scale=1, user-scalable=0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="css/core.css">
+<link rel="stylesheet" href="css/core2.css" media="only screen and (min-width:800px)">
+<title>My Social Network</title>
+<style>
+.mtop-10 {margin-top: 10px;}
+.mtop-20 {margin-top: 20px;}
+.mtop-30 {margin-top: 30px;}
+
+.mbot-10 {margin-bottom: 10px;}
+.mbot-20 {margin-bottom: 20px;}
+.mbot-30 {margin-bottom: 30px;}
+
+.bg-eee{ background-color: #eee;}
+
+.section{
+   float:left;
+   width:100%;
+}
+.section.phor-24{
+   padding:0 24px;
+   box-sizing:border-box;
+   /*width: calc(100% - 48px);*/
+}
+.page-hdr{
+   float: left;
+   width: 100%;
+   padding: 15px;   
+   box-sizing: border-box;
+   font-size: 1.1em;
+   font-weight:bold;
+   text-align:center;
+   border-bottom:1px solid #ddd;
+}
+.page-footer{
+   position:absolute;
+   width:100%;
+   bottom:20px;
+   font-size:0.9em;
+   color: #999;
+   text-align:center;
+}
+.form-txt{
+   float:left;
+   width:100%;
+   padding:0 15px;
+   line-height:44px;
+   background-color:white;
+   font-size:1.1em;
+   border:1px solid #ddd;
+   border-radius:20px;
+   outline:none;
+}
+.form-txt:focus{
+   border:1px solid #24C;
+}
+.form-submit{
+   float:left;
+   width:80%;
+   margin:10px 10%;
+   padding:10px 0;
+   text-align:center;
+   background-color:#24C;
+   color:white;
+   border-radius:8px;
+   cursor:pointer;
+}
+.form-submit.mtop-30{
+   margin-top:30px;
+}
+.form-btn{
+   float:left;
+   padding:8px 25px;
+   background-color:white;
+   color:#24C;
+   border:1px solid #24C;
+   border-radius:8px;
+   cursor:pointer;
+}
+</style>
+</head>
+<body>
+<div class="page-hdr">회원가입</div>
+<div class="section phor-24 bg-eee">
+  <form method="POST" action="jsp/signup.jsp">
+   <input id="uid" name="uid" class="form-txt mtop-30" type="text" placeholder="아이디">
+   <input id="uname" name="uname" class="form-txt mtop-10" type="text" placeholder="이름">
+   <input id="upass" name="upass" class="form-txt mtop-10" type="password" placeholder="패스워드">
+   <input id="upass2" class="form-txt mtop-10" type="password" placeholder="패스워드 확인">
+   <div class="form-submit mtop-30" onclick="checkInput()">MySNS에 가입합니다. class= </div>
+   <div class="section mbot-30"></div>
+  </form>
+</div>
+<div class="page-footer">MySNS COMPANY 2017</div>
+</body>
+</html>
+
+<script src="js/jquery-1.12.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+});
+
+function signup(){
+   window.location.href = "signup.html";
+}
+
+function checkInput(){
+   var uid = $("#uid").val();
+   if (uid==""){
+      alert("아이디를 입력하세요.");
+      return;
+   }
+   var uname = $("#uname").val();
+   if (uname==""){
+      alert("이름을 입력하세요.");
+      return;
+   }
+   var upass = $("#upass").val();
+   if (upass==""){
+      alert("패스워드를 입력하세요.");
+      return;
+   }
+   var upass2 = $("#upass2").val();
+   if (upass2==""){
+      alert("비밀번호를 확인해주세요.");
+      return;
+   }
+}
+</script>

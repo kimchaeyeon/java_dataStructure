@@ -1,0 +1,7 @@
+제 3장. 상속과 Generic Programming
+
+<상속 (Inheritance)>
+ IS-A 관계
+- A Notebook is a Computer.
+- Computer is the superclass(base class, parent class) of Notebook.
+- Notebook is a subclass(extended class, child class) of Computer.

@@ -1,0 +1,30 @@
+package Section1;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+public class Code05 {
+    // 데이터 파일로부터 입력을 받는다.
+	static MyRectangle1 [] rects;
+	static int n = 0;
+	// 데이터를 저장하기 위해 만든 클래스는 static으로 선언한 것이 없지만 메인함수 클래스는 static으로 선언함
+	// 왜?
+	public static void main(String[] args) {
+		Scanner in;
+		try {
+			in = new Scanner (new File("data.txt"));
+			rects[n].lu.x = in.nextInt();//4개의 정수가 하나의 사각형을
+			rects[n].lu.y = in.nextInt();
+			rects[n].width = in.nextInt();
+			rects[n].height = in.nextInt();
+
+			in.close();
+		} catch (FileNotFoundException e) {
+			System.out.println("No data file.");
+			System.exit(1);
+		}
+		
+	}
+
+}
