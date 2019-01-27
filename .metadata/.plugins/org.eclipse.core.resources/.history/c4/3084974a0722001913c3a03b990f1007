@@ -1,0 +1,72 @@
+package section4;
+
+import java.util.Scanner;
+
+public class ShapeApplication {
+
+	private int capacity = 10;
+	private Shape [] shapes = new Shape [capacity];
+	private int n = 0; //저장될 개수
+	private Scanner kb = new Scanner(System.in);
+	// 메소드 밖에서 스케너 생성
+	
+	public void processCommand()
+	{// 모든일들을 이 메소드가 한다.
+		while(true){
+			System.out.print("$ ");
+			String command = kb.next();
+			if (command.equals("add"))
+				handleAdd();
+			else if (command.equals("show")||command.equals("showdetail")) //쇼는 간단하게 출력, 쇼 디테일은 추가적으로 면적, 둘레 길이 등을 출력
+				handleShow( command.equals("showdetail")); //함수 안에서 구분해줘야함 어떤 명령인지를
+			else if (command.equals("sort"))
+				handleSort();
+			else if (command.equals("exit"))
+				break;
+		}
+		kb.close();
+	}
+	
+	private void handleSort() {
+		
+	}
+
+	private void handleShow( boolean detailed ) { //명령 구분을 불린형으로 
+		for (int i=0; i<n; i++){
+			System.out.println((i+1)+". " + shapes[i].toString());
+		    if (detailed){ //참이면 showdetail 명령이기 때문에 추가적인 정보를 보여줘야함
+		    	System.out.println("   The area is " + shapes[i].computerArea());
+		    	System.out.println("   The Perimeter is " + shapes[i].computerPerimeter());
+		    }
+		}
+	}
+		
+
+	private void handleAdd() {
+		String type = kb.next();
+		switch(type) { //자바에서 문자열에 대해 스위치문을 사용할 수 있게 기능이 추가되었음 type
+		case "R":
+			int w = kb.nextInt();// 키보드로 입력받고
+			int h = kb.nextInt();
+			Rectangle r = new Rectangle(w,h); //객체 생성
+			addShape( r ); // 객체를 add 하기
+			break;
+		case "C":
+			addShape( new Circle (kb.nextInt())); // 이런식으로 간추릴 수 있은
+			break;
+		case "T":
+			// 일단 생략!
+		}
+	}
+
+	private void addShape(Shape shape) { //다형성에 의해서 shape타입 변수를 선언해줘야함
+		shapes[n++] = shape;
+	}
+
+	public static void main(String[] args){
+// 이 메인 함수는shapeApplicatron 객체 생성을 하고, 객체 안에 있는 process command를 호출해주는 일을 한다
+		ShapeApplication app = new ShapeApplication();
+		app.processCommand();
+		
+	}
+}

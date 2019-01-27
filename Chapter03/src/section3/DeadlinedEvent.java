@@ -13,12 +13,15 @@ public class DeadlinedEvent extends Event {
 	}
 	
 	public boolean isRelevant( MyDate date){ //이벤트가 이 날짜에 걸리는지를 알아내는 함수
-		return false;
+		return deadline.compareTo(date) >= 0;
 	}
 	
 	public String toString()
 	{
 		return title + ", " + deadline.toString();
+	}
+	public MyDate getRepresentativeDate(){
+		return deadline;
 	}
 
 }

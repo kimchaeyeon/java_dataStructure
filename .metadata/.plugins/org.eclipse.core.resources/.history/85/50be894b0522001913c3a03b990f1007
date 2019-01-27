@@ -1,0 +1,48 @@
+package section4;
+
+import java.util.Scanner;
+
+public class ShapeApplication {
+
+	private int capacity = 10;
+	private Shape [] shapes = new Shape [capacity];
+	private int n = 0; //저장될 개수
+	private Scanner kb = new Scanner(System.in);
+	// 메소드 밖에서 스케너 생성
+	
+	public void processCommand()
+	{// 모든일들을 이 메소드가 한다.
+		while(true){
+			System.out.print("$ ");
+			String command = kb.next();
+			if (command.equals("add"))
+				handleAdd();
+			else if (command.equals("show")||command.equals("showdetail"))
+				handleShow();
+			else if (command.equals("sort"))
+				handleSort();
+			else if (command.equals("exit"))
+				break;
+		}
+		kb.close();
+	}
+	
+	private void handleSort() {
+		
+	}
+
+	private void handleShow() {
+		
+	}
+
+	private void handleAdd() {
+		
+	}
+
+	public static void main(String[] args){
+// 이 메인 함수는shapeApplicatron 객체 생성을 하고, 객체 안에 있는 process command를 호출해주는 일을 한다
+		ShapeApplication app = new ShapeApplication();
+		app.processCommand();
+		
+	}
+}

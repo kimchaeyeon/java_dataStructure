@@ -1,5 +1,6 @@
 package section3;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 import section2.MyDate;
@@ -43,6 +44,9 @@ public class Scheduler {
 			else if( command.equals("show")){
 				handleShow();
 			}
+			else if( command.equals("sort")){
+				Arrays.sort(events, 0, n);
+			}
 			else if( command.equals("exit"))
 				break;
 		}
@@ -54,8 +58,8 @@ public class Scheduler {
 		MyDate theDate = parseDateString( dateString );
 		for (int i=0; i<n; i++){
 			// test if events[i] is relevant to the date, then print it, i번쨰 이벤트가 이 날짜에 걸리면 이벤트를 프린트한다.
-			//if (events[i].isRelevant( theDate ) )
-				//System.out.println(events[i].toString());
+			if (events[i].isRelevant( theDate ) )
+				System.out.println(events[i].toString());
 		}
 	}
 
@@ -113,6 +117,8 @@ public class Scheduler {
 	public static void main(String[] args) {
 		Scheduler app = new Scheduler();// 메인함수를 포함하고 있는 클래스의 객체를 생성하고 ,
 		app.processCommand();
+		
+		//Event test = new Event("Test"); 추상클래스는 선언할 수 없다.
 	}
 
 }

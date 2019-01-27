@@ -102,7 +102,75 @@ $ exit
  - 추상 메서드와 추상 클래스는 키워드 abstract로 표시
  - 추상 클래스는 객체를 만들 수 없음. 따라서 서브 클래스를 만드는 용도로만 사용됨 // 실제로 서브클래스가 구현해내는
  
+ <인터페이스>
+ 
+ - 추상 메서드만을 가진 순수한 추상 클래스
+   static final 데이터 멤버(상수)를 가질 수 있음 <- 이친구를 제외하곤 추상메서드만을 가져야 한다
+ - 예 :
+   public interface Payable{
+      public double calcSalary();
+      public boolean salaried();
+      public static final double DEDUCTIONS = 25.5;
+   }
+   
+   public class Professor implements Payable {
+      ...
+      public boolean calcSalary() {.....}
+      public boolean salaried() {.....}
+      ...
+   }  
+   ----> payable 인터페이스를 구현(implements)하는 클래스는 메서드 calcSalary와  salaried를 실제로 구현해야 한다.
+   
+   
+ <Shape 프로그램>
+ - 사각형, 원, 직각삼각형 등의 도형들을 입력받아 저장하고 
+ - 면적과 둘레 길이를 계산하는 기능
+ 
+ - 실행 예
+  $ add R 1 2
+  $ add C 5
+  $ show
+    1. Rectangle: watch is 1, height is 2
+    2. Circle: radius is 5
+  $ showdetail
+    1. Rectangle: watch is 1, height is 2
+      - The area is 2.0
+      - The perimeter is 6.0
+    2. Circle: radius is 5
+      - The area is 78.5398163397...
+      - The perimeter is 31.415....
+  $ add R 2 6
+  $ sort       // 면적에 대해서 오름차순으로 정렬한다.
+  $ showdetail
+  
+    1. Rectangle: watch is 1, height is 2
+      - The area is 2.0
+      - The perimeter is 6.0
+    2. Rectangle: watch is 2, height is 6
+      - The area is 12.0
+      - The perimeter is 16.0
+    3. Circle: radius is 5
+      - The area is 78.5398163397...
+      - The perimeter is 31.415....
+      
+    --> 하나의 배열을 만들어서 입력된 모든 도형들을 하나의 배열게 저장하도록,,
+                   서로 다른타입의  객체를 하나의 배열에 저장하려면  다형성의 도움을 받아야한다. 
+                   각각의 클래스를 만들어 도형이라는 상위클래스를 만들어서 extend하도록 작성
+        shape 타입의 배열을 만들게 된다.
  
  
+ < Comparable 인터페이스 >
+ 일반적으로 정렬한다는 것은 일단 데이터의 크기 관계가 있다는 것이다. comparable 하다.
+ public interface Comparable{
+ int compareTo(Object o);
+ }
+  --> Comparable 인터페이스는 java API에 이미 정의되어 있으므로 우리가 새로 정의할 필요는 없다. 
  
+ < Interface vs Abstract Class >
+ - 추상 메서드로만 구성된 추상 클래스는 인터페이스와 완전히 동일한가?
+ - 다중 상속(multiple inheritance)
+   java에서는 다중 상속을 허용하지 않는다.
+       하지만 하나의 클래스가 여러 개의 interface를  implement하는 것은 가능
+       인터페이스가 가지고 있는 재산들은 전부 추상 메소드이기 떄문에 이름이 똑같은 메소드를 상속받더라도 문제가 없다.
+       
  
