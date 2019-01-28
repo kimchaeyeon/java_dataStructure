@@ -1,6 +1,8 @@
 package section3;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Scanner;
 
 import section2.MyDate;
@@ -14,9 +16,11 @@ public class Scheduler {
 // 이렇게 하면 세 종류의 이벤트들이 별개의 타입이 아닌 공통점으로 이벤트 클래스를 수퍼클래스를 가지는 자식들이다.
 // 하나의 배열의 그 이벤트들을 저장할 수 있다.
 // 배열의 타입이 Event 타입이 되는것!
-	private int capacity = 10;
-	public Event[] events = new Event[capacity];
-	public int n = 0;
+// 배열을 리스트로 수정함
+	
+	//	private int capacity = 10;
+	public ArrayList<Event> events = new Arraylist<>();
+//	public int n = 0;
 	private Scanner kb;
 	// 수퍼클래스 타입의 객체는 서브 클래스 타입의 객체를 참조할 수 있다!! 중요중요 OneDayEvent타입의 객체를 참조할 수 있다.
 		
@@ -45,7 +49,7 @@ public class Scheduler {
 				handleShow();
 			}
 			else if( command.equals("sort")){
-				Arrays.sort(events, 0, n);
+				Collections.sort(events);
 			}
 			else if( command.equals("exit"))
 				break;
@@ -56,16 +60,17 @@ public class Scheduler {
 	private void handleShow() {
 		String dateString = kb.next();
 		MyDate theDate = parseDateString( dateString );
-		for (int i=0; i<n; i++){
+		for ( Event ev : events){
 			// test if events[i] is relevant to the date, then print it, i번쨰 이벤트가 이 날짜에 걸리면 이벤트를 프린트한다.
-			if (events[i].isRelevant( theDate ) )
-				System.out.println(events[i].toString());
+			if (ev.isRelevant( theDate ) )
+				System.out.println(events.get(i).toString());
 		}
 	}
 
 	private void handleList() {
-		for (int i =0; i<n; i++)
-			System.out.println("   " + events[i].toString() );
+//		for (int i =0; i<events.size(); i++)
+		for ( Event ev : events )  //enhanced for loop , arraylist events의 모든 Event 타입 ev에 대해서
+			System.out.println("   " + ev.toString() );
 	}
 
 	private void handleAddDeadlinedEvent() {
@@ -82,7 +87,6 @@ public class Scheduler {
 		String title = kb.next();
 
 		MyDate date = parseDateString( dateString );
-		
 		OneDayEvent ev = new OneDayEvent( title , date);
 		//System.out.println( ev.toString());
 		addEvent(ev);
@@ -90,18 +94,18 @@ public class Scheduler {
 	}
 
 	private void addEvent(OneDayEvent ev) {
-		if ( n >= capacity)
-			reallocate();
-		events[n++] = ev; // onedayEvent타입의 객체를 events 타입의 객체를 참조하도록 
+//		if ( n >= capacity)
+//			reallocate();
+		events.add(ev); // onedayEvent타입의 객체를 events 타입의 객체를 참조하도록 
 	}
 
-	private void reallocate() {
-		Event [] tmp = new Event [capacity * 2];
-		for ( int i=0; i<n; i++)
-			tmp[i] = events[i];
-		events = tmp;
-		capacity *=2;
-	}
+//	private void reallocate() {
+//		Event [] tmp = new Event [capacity * 2];
+//		for ( int i=0; i<n; i++)
+//			tmp[i] = events[i];
+//		events = tmp;
+//		capacity *=2;
+//	}
 
 	private MyDate parseDateString(String dateString) {//dateString = "2017/1/20" 문자열을 어떻게 적절하게 쪼갤까
 		String [] tokens = dateString.split("/");

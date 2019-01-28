@@ -1,0 +1,15 @@
+package section5;
+
+public class MyArrayList<E> { // E라는 가상의 데이터 타입으로 parameterized된 클래스
+	// 먼저 자료구조(변수)들을 생각하며 코드를 짠다. 
+	private static final int INIT_CAPACITY = 10;
+	private E [] theData;    // E타입의 배열, 생성자 안에서 배열을 생성해보도록 하겠음
+	private int size;        // 이 배열에 저장될 데이터의 개수
+	private int capacity;  // 배열의 크기
+	
+	public MyArrayList(){ //생성자를 만들고 배열을 생성하고 초기화등을 해준다.
+		theData = (E []) new Object [INIT_CAPACITY];// 배열 생성, new 뒤에 실제로 존재하지 않는 타입명이 들어가면 안된다. 
+		size = 0;                                    // 그래서 E타입의 배열을 생성할 수가 없다. 모든 타입을 저장할 수 있는 Object타입의 배열을 생성을 하고 E로 타입변환을 해줘야 문법적으로 맞게 됨
+		capacity = INIT_CAPACITY;
+	}
+}

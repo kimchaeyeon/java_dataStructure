@@ -173,4 +173,85 @@ $ exit
        하지만 하나의 클래스가 여러 개의 interface를  implement하는 것은 가능
        인터페이스가 가지고 있는 재산들은 전부 추상 메소드이기 떄문에 이름이 똑같은 메소드를 상속받더라도 문제가 없다.
        
+ 3.5장 
+ <Generic Programming>
+ - 제네릭 프로그래밍은 데이터 형식에 의존하지 않고(실제로 객체를 생성할 때 타입을 명시적으로 지정해주는),
+       하나의 값이 여러 다른 데이터 타입들을 가질 수 있는 기술에 중점을 두어 재사용성을 높일 수 있는 프로그래밍 방식이다.
+ - Generic한 변수/자료구조
+    Event ev; // ev가 참조하는 데이터
+    Event [] events = new Event[capacity];
+    Object obj;
+ - Generic한 알고리즘(method)
+    Arrays.sort( shapes,0,n )
+ - Generic 클래스
+    Generics
+    --> Polymorphism, Interface를 이용하여 
+    
+   public class Box<t>{      // T(type parameter)라는 가상의 타입에 의해서 parameterized된 클래스
+     private T t
+     public void set(T t) {this.t = t;}
+     public T get() {return t;}
+   }     
+        
+   Box<Integer> integerBox = new Box<Integer>(); // 객체를 생성하는 시점에 타입 T를 실제하는 타입으로 지정해준다.
+   intergerBox.set( new Integer(10) );
+   Box<Event> eventBox = new Box<Event>();
+   eventBox.set(new OneDayEvent("dinner", new MyDate(2017,2,10))); 
+   
+   2개 이상의 type parameter를 가질수도 있다. 
+    public class Pair<K,V>
+       객체를 생성하는 시점에 가상의 타입 k와 를 실제하는 타입으로 지정해준다. 
+    Pair<String,Integer> p1 = new Pair<String,Integer>();
+    Pair<String,String> p2 = new Pair<String,String>();
+    
+ <class Object vs. Generics>
  
+ public class Box{
+    private Object t;
+    public void set(Object t){this.t = t;}
+    public Object get() {return t;}
+  }
+  
+ Box box = new Box();
+ box.set( new Integer(10) );
+ Integer a = (Integer)box.get();
+               --> get()의 return type은 Object이므로 반드시 type casting을 해주어야 함
+                  
+                   VS
+                   
+ public class Box<T>{
+    private T t;
+    public void set(T t){this.t = t;}
+    public T get() {return t;}
+  }
+  
+ Box<Integer> box = new Box<Integer>();
+ box.set( new Integer(10) );
+ Integer a = box.get();
+ 
+ <Generic한 리스트 클래스를 만들어보기>
+ 
+ - 리스트(list)
+      여러 개의 데이터를 저장하고,
+      임의의 위치에 새로운 데이터를 추가하고ㅗ나
+      데이터의 삭제가 가능하고
+      임의의 위치의 데이터를 읽을 수 있고,
+      용량에 제한이 없고,
+      ...
+      
+ < 사용 예 >
+- 예를 들어 String들을 저장하려면
+    MyArrayList<String> myList = new MyArrayList<String>();
+    생성된 리스트에 String 추가
+  myList.add("Bashful");  <-- add는 list의 맨끝에 새로운 데이터를 추가하게됨
+  myList.add("Awful");
+  myList.add("Jumpy"); 
+  myList.add("Happy");  
+   추가한 순서대로 저장됨
+- myList.add(2,"Dog");    <-- 2번 위치에 추가 된다. 다른 데이터들은 뒤로 밀려남
+  myList.remove(1);       <-- 1번 위치의 데이터가 제거되고 다른 데이터들은 앞으로 당겨지게됨 
+  myList.set(2,"Sneezy"); <-- 2번위치의 데이터를 sneezy로 바꿈
+  int index = myList.indexOf("Sneezy");  <-- Sneezy라는 데이터가 저장된 인덱스의 번호를 저장   
+                                                                                                            존재하지 않는 데이터를 부를려고 할때는 -1를 return해줌
+    
+  

@@ -1,0 +1,176 @@
+제 3장. 상속과 Generic Programming
+
+<상속 (Inheritance)>
+ 
+ IS-A 관계
+- A Notebook is a Computer.
+- Computer is the superclass(base class, parent class) of Notebook.
+- Notebook is a subclass(extended class, child class) of Computer.
+
+<상속과 생성자> *JAVA에서 모든 클래스에는 생성자가 적어도 하나 존재해야한다*
+
+- 생성자가 없을 경우 자동으로 no-parameter 생성자가 만들어진다. 생성자가 하나라도 있을 경우 자동으로 만들어지지 않는다.
+- 모든 서브 클래스의 생성자는 먼저 수퍼클래스의 생성자를 호출한다.
+  1. super(...)를 통해 명시적으로 호출해 주거나,
+  2. 그렇지 않을 경우에는 자동으로 no-parameter 생성자가 호출된다.
+- 흔한 오류:
+     수퍼클래스에 no-parameter 생성자가 없는데, 서브클래스의 생성자에서 super(...) 호출을 안해주는 경우
+     
+<메소드 오버라이딩>
+
+부모로부터 상속받은 메소드를 조금더 자신에 맞게 고칠 수 있음, 메소드를 새로 작성
+
+<다형성: Polymorphism> -- 객체지향에서 가장 중요한 개념!!!!!!!!!!!!!!!!! 
+
+- 수퍼클래스 타입의 변수(참조변수)가 서브클래스 타입의 객체를 참조할 수 있다. (역은 불가능하다)
+- 두 클래스는 각자의 toString()를 가지고 있다. 그렇다면 여기서 둘 중 어떤 toString() 매서드가 실행될까? 
+  Notebook 클래스의 toString() 메소드가 실행된다. 
+     즉 동적 바인딩(dynamic binding)이 일어난다.
+- 자바에서는 동적바인딩~!!!
+
+3-2장. Case Study: 스케쥴러 프로그램(ToDo App)
+
+<4 종류의 이벤트>
+- 일회성 이벤트              : 생일, 식사약속, 회의 등
+- 기간이 지정된 이벤트    : 시험기간, 축제기간 등
+                                          시작일과 종료일이 있는 경우
+- 데드라인이 있는 이벤트 : 시작일은 없고 데드라인이 있는 일
+                                           제출기한이 있는 과제, 종료일이 있는 프로젝트 등
+- 주기적 이벤트              : 수업시간(3월 초에서 6월 말까지 매주 월,목 등)
+
+<사용 예>
+$ addevent oneday (일회성)
+   when : 2017/1/15
+   title: K's birthday (기간)
+$ addevent duration
+   degin: 2017/1/10
+   end  : 2017/1/31
+   title: Winter Festival
+$ addevent deadline (데드라인)
+   until: 2017/2/10
+   title: Submitting term paper 
+$ addevent oneday
+   when : 2017/2/2
+   title: Project meeting
+$ list
+   K's birthday, 2017/1/15
+   Winter Festival, 2017/1/10 ~ 2017/1/31
+   Submitting term paper, 2017/2/10 
+   Project meeting, 2017/2/2
+$ show 2017/1/15
+   K's birthday, 2017/1/15
+   Winter Festival, 2017/1/10 ~ 2017/1/31
+   Submitting term paper, 2017/2/10 
+$ exit
+
+그 프로그앰 안에서 처리해야 할 데이터를 어디에 어떻게 저장할지 먼저 생각하면서 클래스를 만들어낸다.
+-> 세종류의 이벤트를 어떻게 작성해야할까? 한 이벤트씩 클래스를 만든다.
+
+<배열 재할당: Array Reallocation>
+
+3-3장
+
+<Wrapper class>
+
+- java에서 primitive type 데이터와 non-primitive type 데이터, 즉 객체는 근본적으로 다르게 처리된다.
+- 가령 Object 타입의 배열에는 다형성의 원리에 의해서(모든 클래스의 수퍼 클래스이기 때문에) 모든 종류의 객체를 저장(참조)할 수 있다.
+     하지만 int,double,char 등의 primitive type 데이터는 저장할 수 없다. 객체가 아니므로...
+- 때떄로 primitive type 데이터를 객체로 만들어야 할 경우가 있다.
+     이럴 때 Integer, Double, Character 등의  wrapper class를 이용한다.
+
+
+- 기본 타입의 데이터를 하나의 객체로 포장해주는 클래스:
+- Integer, Double, Character, Boolean (java API가 기본적으로 제공해주는 클래스이다)
+  int a = 20;    // 일단 객체가 아니므로 Object 배열에 저장할 수 없다
+  integer age = new Integer(a); //살짝 포장함(wrapping)
+  int b = age.intValue();        //b becomes 20 이제 넣을 수 있음 (unwrapping)
+
+정수 값등을 가끔 object타입의 객체에 저장하고 싶을 떄 이 클래스를 이용한다.
+
+- 데이터 타입간의 변환 기능을 제공
+  String str = "1234"; // 숫자로 구성된 스트링값을 정수로 변환해주는..
+  int d = Integer.parseInt(str); //d becomes 1234
+  
+  <Autoboxing과 Unboxing>
+  
+  
+ 3-4장 : 추상클래스와 인터페이스
+ 
+ <추상 클래스>
+ - 추상(abstract)메서드는 선언만 있고 구현이 없는 메서드
+ - 추상 메서드를 포함한 클래스는 추상 클래스
+ - 추상 메서드와 추상 클래스는 키워드 abstract로 표시
+ - 추상 클래스는 객체를 만들 수 없음. 따라서 서브 클래스를 만드는 용도로만 사용됨 // 실제로 서브클래스가 구현해내는
+ 
+ <인터페이스>
+ 
+ - 추상 메서드만을 가진 순수한 추상 클래스
+   static final 데이터 멤버(상수)를 가질 수 있음 <- 이친구를 제외하곤 추상메서드만을 가져야 한다
+ - 예 :
+   public interface Payable{
+      public double calcSalary();
+      public boolean salaried();
+      public static final double DEDUCTIONS = 25.5;
+   }
+   
+   public class Professor implements Payable {
+      ...
+      public boolean calcSalary() {.....}
+      public boolean salaried() {.....}
+      ...
+   }  
+   ----> payable 인터페이스를 구현(implements)하는 클래스는 메서드 calcSalary와  salaried를 실제로 구현해야 한다.
+   
+   
+ <Shape 프로그램>
+ - 사각형, 원, 직각삼각형 등의 도형들을 입력받아 저장하고 
+ - 면적과 둘레 길이를 계산하는 기능
+ 
+ - 실행 예
+  $ add R 1 2
+  $ add C 5
+  $ show
+    1. Rectangle: watch is 1, height is 2
+    2. Circle: radius is 5
+  $ showdetail
+    1. Rectangle: watch is 1, height is 2
+      - The area is 2.0
+      - The perimeter is 6.0
+    2. Circle: radius is 5
+      - The area is 78.5398163397...
+      - The perimeter is 31.415....
+  $ add R 2 6
+  $ sort       // 면적에 대해서 오름차순으로 정렬한다.
+  $ showdetail
+  
+    1. Rectangle: watch is 1, height is 2
+      - The area is 2.0
+      - The perimeter is 6.0
+    2. Rectangle: watch is 2, height is 6
+      - The area is 12.0
+      - The perimeter is 16.0
+    3. Circle: radius is 5
+      - The area is 78.5398163397...
+      - The perimeter is 31.415....
+      
+    --> 하나의 배열을 만들어서 입력된 모든 도형들을 하나의 배열게 저장하도록,,
+                   서로 다른타입의  객체를 하나의 배열에 저장하려면  다형성의 도움을 받아야한다. 
+                   각각의 클래스를 만들어 도형이라는 상위클래스를 만들어서 extend하도록 작성
+        shape 타입의 배열을 만들게 된다.
+ 
+ 
+ < Comparable 인터페이스 >
+ 일반적으로 정렬한다는 것은 일단 데이터의 크기 관계가 있다는 것이다. comparable 하다.
+ public interface Comparable{
+ int compareTo(Object o);
+ }
+  --> Comparable 인터페이스는 java API에 이미 정의되어 있으므로 우리가 새로 정의할 필요는 없다. 
+ 
+ < Interface vs Abstract Class >
+ - 추상 메서드로만 구성된 추상 클래스는 인터페이스와 완전히 동일한가?
+ - 다중 상속(multiple inheritance)
+   java에서는 다중 상속을 허용하지 않는다.
+       하지만 하나의 클래스가 여러 개의 interface를  implement하는 것은 가능
+       인터페이스가 가지고 있는 재산들은 전부 추상 메소드이기 떄문에 이름이 똑같은 메소드를 상속받더라도 문제가 없다.
+       
+ 
