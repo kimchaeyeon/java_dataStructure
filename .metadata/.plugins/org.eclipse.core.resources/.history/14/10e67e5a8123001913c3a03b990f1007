@@ -1,0 +1,16 @@
+package section1;
+
+public class MySingleLinkedList<T> { // 단방향 링크드리스트, 반대로 각각의 노드가 자기 이전,다음 노드의 주소를 동시에 가지는 구조의 연결리스트는 더블링크드리스트,
+	
+	public Node<T> head; //첫번째 노드의 주소, T타입
+	public int size = 0;
+	
+	
+	
+	
+
+	public static void main(String[] args) {
+
+	}
+
+}

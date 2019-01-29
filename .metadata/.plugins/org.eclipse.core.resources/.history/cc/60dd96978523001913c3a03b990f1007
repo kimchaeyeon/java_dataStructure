@@ -1,0 +1,44 @@
+package section1;
+
+public class MySingleLinkedList<T> { // 단방향 링크드리스트, 반대로 각각의 노드가 자기 이전,다음 노드의 주소를 동시에 가지는 구조의 연결리스트는 더블링크드리스트,
+	
+	public Node<T> head; // 첫번째 노드의 주소, T타입
+	public int size;
+	
+	public MySingleLinkedList(){// 생성자
+		head = null;
+		size = 0;
+	}
+	
+	public void add( int index, T item )// insert  , arrayList메소드와 유사한 메소드들을 생성
+	{
+		
+	}
+	public void remove( int index ) // delete
+	{
+		
+	}
+	public T get(int index){
+		
+		return null;
+	}
+	public int indexOf( T item ) // search
+	{
+		return -1;
+	}
+
+	public static void main(String[] args) {
+		MySingleLinkedList<String> list = new MySingleLinkedList<String>(); //String 타입 객체 생성
+		
+		list.add(0, "Saturday");
+		list.add(1, "Friday");
+		list.add(0, "Monday"); // M,S,F
+		list.add(2, "Tuesday"); // M,S,T,F
+		
+		String str = list.get(2); //str = "Tuesday";
+		list.remove(2);  //M,S,F
+		int pos = list.indexOf("Friday"); // pos = 2
+
+	}
+
+}
