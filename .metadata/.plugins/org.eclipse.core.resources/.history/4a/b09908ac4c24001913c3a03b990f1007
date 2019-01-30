@@ -9,7 +9,7 @@ public class MySingleLinkedList<T> { // 단방향 링크드리스트, 반대로 각각의 노드�
 		head = null;
 		size = 0;
 	}
-	public void addFirst( T item ){ //새로운 노드 데이터를 연결리스트 맨 앞에 추가하는 메소드 
+	public void addFisrt( T item ){ //새로운 노드 데이터를 연결리스트 맨 앞에 추가하는 메소드 
         //새로운 노드를 만들고 추가할 데이터를 저장
 		Node<T> temp = new Node<T>(item); // 노드 클래스의 생성자가 매개변수를 하나 받아야 하기 떄문에 오류
 		// T타입을 parameter로 가지는 다른 객체를 생성하는것은 가능,, T : type parameter 를 포함하는 새로운 객체를 생성할 때,
@@ -53,39 +53,16 @@ public class MySingleLinkedList<T> { // 단방향 링크드리스트, 반대로 각각의 노드�
 	// 단순연결리스트에 어떤 노드를 삭제할 때는 삭제할 노드의 바로 앞 노드의 주소가 필요하다. 삭제할 노드의 주소만으로는 삭제할 수 없다.
 	public void add( int index, T item )// insert , 연결리스트의 index번째 위치에 새로운 데이터를 삽입한다.
 	{
-		if( index < 0 || index > size )
-			return;
 		if( index == 0)
 			addFirst( item );
 		else{
 			Node<T> q = getNode( index -1 );
 			addAfter( q, item ); //index-1 뒤에 새로운 노드를 추가하는 것이기 때문에 이렇게 함수를 작성해도 됨 index가 0 일때는?
 		}
-	}
-	public T remove( int index ) // delete , index번째 노드를 삭제하고 , 그 노드에 저장된 데이터를 반환한다
-	{// 한 노드를 삭제하려면 그 이전노드의 주소를 알아야한다.
-		if( index < 0 || index >= size )
-			return null;
-		if( index == 0 )
-			return removeFirst();
-		Node<T> prev = getNode( index-1 );
-		return removeAfter( prev );
-	}
-	public T remove( T item ) { // 입력된 스트링을 저장한 노드를 찾아 삭제한다. 삭제한 노드에 저장된 스트링을 반환한다.
-		// 삭제할 노드를 찾았음, 하지만 노드를 삭제하기 위해서는 삭제할 노드가 아니라 직전 노드의 주소가 필요함
-		// 참조변수 두개를 쓰기!
-		Node<T> p = head;
-		Node<T> q = null; // q는 항상 p의 직전 노드를 가리킴
-		while( p!= null && !p.data.equals(item)){
-			q = p;
-			p = p.next;
-		}
-		if (p==null)//찾고있는 노드가 존재하지 않는다는 뜻
-			return null;
-		if (q==null)
-			return removeFirst();
-
-		return removeAfter(q);
+			}
+	public void remove( int index ) // delete
+	{
+		
 	}
 	public Node<T> getNode( int index ){ // 연결리스트의 index번째 노드의 주소를 반환해주는 메소드
 		if(index<0 || index >= size)
