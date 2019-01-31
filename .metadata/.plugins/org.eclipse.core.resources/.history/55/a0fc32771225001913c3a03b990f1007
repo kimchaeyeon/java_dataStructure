@@ -253,5 +253,5 @@ $ exit
   myList.set(2,"Sneezy"); <-- 2번위치의 데이터를 sneezy로 바꿈
   int index = myList.indexOf("Sneezy");  <-- Sneezy라는 데이터가 저장된 인덱스의 번호를 저장   
                                                                                                             존재하지 않는 데이터를 부를려고 할때는 -1를 return해줌
-  
+    
   

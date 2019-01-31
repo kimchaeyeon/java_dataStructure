@@ -63,7 +63,7 @@ public class Scheduler {
 		for ( Event ev : events){
 			// test if events[i] is relevant to the date, then print it, i번쨰 이벤트가 이 날짜에 걸리면 이벤트를 프린트한다.
 			if (ev.isRelevant( theDate ) )
-				System.out.println(ev.toString());
+				System.out.println(events.get(i).toString());
 		}
 	}
 
@@ -74,31 +74,9 @@ public class Scheduler {
 	}
 
 	private void handleAddDeadlinedEvent() {
-		System.out.print("  deadline: ");
-		String dateString = kb.next(); 
-		System.out.print("  title: ");
-		String title = kb.next();
-
-		MyDate date = parseDateString( dateString );
-		OneDayEvent ev = new OneDayEvent( title , date);
-		//System.out.println( ev.toString());
-		addEvent(ev);
 	}
 
 	private void handleAddDurationEvent() {
-		System.out.print("  begin: ");
-		String beginString = kb.next(); 
-		System.out.print("  end: ");
-		String endString = kb.next(); 
-		System.out.print("  title: ");
-		String title = kb.next();
-
-		MyDate begin = parseDateString( beginString );
-		MyDate end = parseDateString( endString );
-		
-		DurationEvent ev = new DurationEvent( title , begin, end);
-		//System.out.println( ev.toString());
-		addEvent(ev);
 	}
 
 	private void handleAddOneDayEvent() {
