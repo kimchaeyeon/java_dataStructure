@@ -1,0 +1,28 @@
+package section2;
+
+import section1.MySingleLinkedList;
+
+public class Polynomial { // 다항식의 이름(f,g..), 
+	
+	public char name;
+	public MySingleLinkedList<Term> terms; //다른 패키지에 있는 클래스이기 때문에 임포트 해줘야한다.
+	
+	public Polynomial( char name ){ //생성자
+		this.name = name;
+		terms = new MySingleLinkedList<Term>(); // 생성자 밖에서도 생성해줘도 된다.
+	}
+	
+	public void addTerm( int coef, int expo ){ // 기존의 다항식에 새로운 항 coef*Xexpo^를 추가하라 ,
+		// 차수에 관한 내림차순으로 정렬되어 있다고 가정
+		// 추가하려는 항과 동일 차수의 항이 이미 있는 경우 : 기존 항의 계수만 변경
+		// 그렇지 않은 경우 : 새로운 항을 삽입( 항들은 차수의 내림차순으로 항상 정렬 됨 )
+	}
+	
+	
+	
+	
+	public static void main(String[] args) {
+
+	}
+
+}

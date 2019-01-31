@@ -1,0 +1,67 @@
+package section2;
+
+import java.util.Scanner;
+
+public class MyPolynomialApp { 
+	
+	private Polynomial [] polys = new Polynomial [100];//여러개의 다항식을 계속적으로 저장할 수 있는
+	int n = 0;
+	private Scanner kb = new Scanner( System.in );
+	
+	public MyPolynomialApp(){
+		
+	}
+	public void processCommand()
+	{
+		while(true){
+			System.out.print("$");
+			String command = kb.next();
+			if (command.equals("create"))
+				handleCreate();
+			else if (command.equals("add"))
+				handleAdd();
+			else if (command.equals("calc"))
+				handleCalc();
+			else if (command.equals("print"))
+				handlePrint();
+			else if (command.equals("exit"))
+				break;
+		}
+		kb.close();
+	}
+	
+	private void handlePrint() {
+		
+	}
+	private void handleCalc() {
+		
+	}
+	private void handleAdd() {
+		// 이 항을 어떤 다항식에 입력해야 하는지
+		char name = kb.next().charAt(0);
+		int coef = kb.nextInt();
+		int expo = kb.nextInt();
+		int index = find(name);
+		if( index <0 ){
+			System.out.printf("No Such polynomial");
+			return;
+		}
+		polys[index].addTerm(coef, expo); //polynomial객체가 addTerm메소드를 지원해주기 떄문에
+	}
+	private int find(char name) {
+		for (int i = 0; i < n; i++)
+			if( polys[i].name == name)
+				return i;
+		return -1;
+	}
+	private void handleCreate() {
+		char name = kb.next().charAt(0); //문자열로 입력되기 때문에 그것의 첫글자
+		Polynomial p = new Polynomial(name);
+		polys[n++] = p;
+	}
+	public static void main(String[] args) {
+		MyPolynomialApp app = new MyPolynomialApp();
+		app.processCommand();
+	}
+
+}
